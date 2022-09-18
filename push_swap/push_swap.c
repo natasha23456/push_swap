@@ -35,24 +35,26 @@ int	main(int argc, char **argv)
 {
 	unsigned int	*stack;
 	unsigned int	*temp;
-	size_t			size_a;
+	size_t			*size;
 
-	size_a = argc - 1;
-	stack = error_check(size_a, argv);
+	size = malloc(sizeof(unsigned int *) * 2);
+	size[0] = argc - 1;
+	size[1] = 0;
+	stack = error_check(size[0], argv);
 	if (stack == 0)
 	{
 		error_exit();
 		return (EXIT_FAILURE);
 	}
-	if (ps_sorted(stack, size_a))
+	if (ps_sorted(stack, size[0]))
 		return (0);
-	temp = malloc(sizeof(unsigned int *) * size_a);
+	temp = malloc(sizeof(unsigned int *) * size[0]);
 	if (!temp)
 	{
 		write(2, "Error with memory allocation\n", 30);
 		return (EXIT_FAILURE);
 	}
-	radix_sort(stack, temp, size_a, 0);
+	radix_sort(stack, temp, size, 0);
 	free(stack);
 	free(temp);
 	return (0);

@@ -22,11 +22,10 @@ void	sb(unsigned int *stack_b, const size_t size)
 
 // do sa and sb at the same time.
 
-void	ss(unsigned int *stack_a, unsigned int *stack_b, const size_t size_a,
-			const size_t size_b)
+void	ss(unsigned int *stack_a, unsigned int *stack_b, const size_t *size)
 {
-	swap(stack_a, size_a);
-	swap(stack_b, size_b);
+	swap(stack_a, size[0]);
+	swap(stack_b, size[1]);
 	ft_printf("ss\n");
 }
 

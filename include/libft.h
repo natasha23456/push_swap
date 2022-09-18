@@ -74,7 +74,9 @@ int				ps_sorted(unsigned int *stack, size_t size);
 void			size_change(size_t *size_plus, size_t *size_minus);
 void			sort_3(unsigned int *stack, unsigned int size);
 void			radix_sort(unsigned int *stack_a, unsigned int *stack_b,
-					size_t size_a, int bit);
+					size_t *size, int bit);
+void			ps_bitmasking(unsigned int *stack_a, unsigned int *stack_b,
+					size_t *size, int bit);
 int				n_exists(unsigned int *stack, const unsigned int stack_size,
 					long check);
 int				ps_parsing(unsigned int *stack, char *argument,
@@ -86,15 +88,15 @@ void			swap(unsigned int *stack, const size_t size);
 void			ft_push(unsigned int *source, unsigned int *destination,
 					const size_t *size_source, const size_t *size_dest);
 void			pa(unsigned int *stack_a, unsigned int *stack_b,
-					size_t *a_size, size_t *b_size);
+					size_t *size);
 void			pb(unsigned int *stack_a, unsigned int *stack_b,
-					size_t *a_size, size_t *b_size);
+					size_t *size);
 void			ss(unsigned int *stack_a, unsigned int *stack_b,
-					const size_t size_a, const size_t size_b);
+					const size_t *size);
 void			rr(unsigned int *stack_a, unsigned int *stack_b,
-					const size_t size_a, const size_t size_b);
+					const size_t *size);
 void			rrr(unsigned int *stack_a, unsigned int *stack_b,
-					const size_t size_a, const size_t size_b);
+					const size_t *size);
 void			sa(unsigned int *stack_a, const size_t size);
 void			ra(unsigned int *stack_a, const size_t size);
 void			rra(unsigned int *stack_a, const size_t size);

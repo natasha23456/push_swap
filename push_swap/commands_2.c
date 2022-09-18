@@ -13,11 +13,10 @@
 #include "../include/libft.h"
 
 // do ra and rb at the same time.
-void	rr(unsigned int *stack_a, unsigned int *stack_b, const size_t size_a,
-			const size_t size_b)
+void	rr(unsigned int *stack_a, unsigned int *stack_b, const size_t *size)
 {
-	rotate(stack_a, size_a);
-	rotate(stack_b, size_b);
+	rotate(stack_a, size[0]);
+	rotate(stack_b, size[1]);
 	ft_printf("rr\n");
 }
 
@@ -53,10 +52,9 @@ void	rrb(unsigned int *stack_b, const size_t size)
 
 // do rra and rrb at the same time.
 
-void	rrr(unsigned int *stack_a, unsigned int *stack_b, const size_t size_a,
-			const size_t size_b)
+void	rrr(unsigned int *stack_a, unsigned int *stack_b, const size_t *size)
 {
-	reverse_rotate(stack_a, size_a);
-	reverse_rotate(stack_b, size_b);
+	reverse_rotate(stack_a, size[0]);
+	reverse_rotate(stack_b, size[1]);
 	ft_printf("rrr\n");
 }

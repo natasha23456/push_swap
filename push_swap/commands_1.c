@@ -34,24 +34,24 @@ void	ft_push(unsigned int *source, unsigned int *destination,
 // push the first element of b to the top of a.
 
 void	pa(unsigned int *stack_a, unsigned int *stack_b,
-			size_t *a_size, size_t *b_size)
+			size_t *size)
 {
-	if (*b_size == 0)
+	if (size[1] == 0)
 		return ;
-	ft_push(stack_b, stack_a, b_size, a_size);
-	size_change(a_size, b_size);
+	ft_push(stack_b, stack_a, &size[1], &size[0]);
+	size_change(&size[0], &size[1]);
 	ft_printf("pa\n");
 }
 
 // push the first element of a to the top of b.
 
 void	pb(unsigned int *stack_a, unsigned int *stack_b,
-			size_t *a_size, size_t *b_size)
+			size_t *size)
 {
-	if (*a_size == 0)
+	if (size[0] == 0)
 		return ;
-	ft_push(stack_a, stack_b, a_size, b_size);
-	size_change(b_size, a_size);
+	ft_push(stack_a, stack_b, &size[0], &size[1]);
+	size_change(&size[1], &size[0]);
 	ft_printf("pb\n");
 }
 
